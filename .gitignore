@@ -1,0 +1,53 @@
+# Local Python environments and tooling
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Sensitive and generated material
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+private-sources/
+*.pdf
+credentials/
+secrets/
+credentials.json
+token.json
+service-account*.json
+*.credentials
+*.secret
+*.secrets
+*.db
+*.npy
+*.npz
+data/generated/
+data/elexon/
+reports/generated/
+outputs/
+artifacts/
+*.sqlite
+*.sqlite3
+
+# Local worker checkouts and editor state
+.worktrees/
+.vscode/
+.idea/
+.playwright-cli/
+.playwright-mcp/
+
+# Streamlit agent skills (environment-specific symlinks)
+.agents/skills/developing-with-streamlit
+.claude/skills/developing-with-streamlit
+
+# Precomputed demo run (scripts/build_demo_run.py)
+data/demo/
+
+# Local hosting configuration and notes (kept out of the shared repository)
+deploy/

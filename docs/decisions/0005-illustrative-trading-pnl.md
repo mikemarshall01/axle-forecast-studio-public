@@ -1,0 +1,7 @@
+# Decision 0005: illustrative simulated trading P&L
+
+Status: accepted product choice from Mike, 29 September 2026. Amends decision 0003 for one defined set of components.
+
+The Trading page may show a net figure for a defined set of simulated trading buckets, labelled "illustrative simulated trading P&L", never "Axle cash". The buckets, with signs from the aggregator's point of view (positive = income), are: day-ahead revenue on sold turn-down, intraday P&L, trading cost (half bid-ask on traded volume, negative), imbalance settlement, baseline effect (value of baseline minus unmanaged volume, shown separately so it is never mistaken for real flexibility), grid-event payments (turn-down and turn-up), supplier compensation (default £0: under BSC P415 as approved by Ofgem on 6 October 2023, the supplier affected by a VLP's action is compensated at a price from Ofgem's price-cap wholesale methodology, and that cost is shared across all suppliers by market share, so the VLP pays nothing directly), customer revenue share (default 50% of gross, negative) and an unmet-charge penalty (negative). The net is their sum and must reconcile exactly in code and tests.
+
+Every price and volume is synthetic. The customer's cheap charging leg stays on their supply tariff and is not a trading bucket. The customer energy cost effect (decision 0004 item 4) remains a separate, illustrative figure. Revenue streams not modelled (Balancing Mechanism, frequency response, Capacity Market, other DNO services) are listed as limitations, not zero.

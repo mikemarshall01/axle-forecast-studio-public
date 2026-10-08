@@ -1,0 +1,36 @@
+[theme]
+base = "dark"
+showSidebarBorder = true
+primaryColor = "#0F766E"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#171B23"
+textColor = "#E9EDF3"
+linkColor = "#6EE7D0"
+# Muted border (polish plan G1): the earlier #64748B was the brightest thing
+# on screen; borders should separate, not compete with the data.
+borderColor = "#2A3140"
+dataframeBorderColor = "#2A3140"
+showWidgetBorder = false
+font = "sans-serif"
+# Type scale (polish plan G1, decision 0004 item 54): 14 px body with a
+# compact heading ladder so page chrome takes less height before the first chart.
+baseFontSize = 14
+headingFontSizes = ["24px", "20px", "17px", "15px", "13px", "12px"]
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+baseRadius = "4px"
+
+[theme.sidebar]
+backgroundColor = "#131720"
+secondaryBackgroundColor = "#1C222B"
+borderColor = "#2A3140"
+
+[runner]
+# A click during the ~40 s Run must not start a second script thread beside
+# the running model (Streamlit's fast reruns would). With this off, the click
+# waits until the run stores its result, then the page reruns with it.
+fastReruns = false
+
+[client]
+# "minimal" drops the Deploy button and developer menu items, so the header
+# fits at 390 px instead of pushing its buttons off-screen.
+toolbarMode = "minimal"

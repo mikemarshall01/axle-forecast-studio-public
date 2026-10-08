@@ -1,0 +1,63 @@
+# The Dockerfile copies only what the app needs (pyproject.toml, uv.lock,
+# README.md, src/, streamlit_app.py, assets/, docs/explainers/,
+# .streamlit/config.toml and scripts/build_demo_run.py). Everything else is
+# kept out of the build context, so private, local or generated files can
+# never reach an image layer.
+.git
+.gitignore
+.dockerignore
+Dockerfile
+.venv
+.worktrees
+.claude
+.agents
+.playwright-cli
+.playwright-mcp
+.vscode
+.idea
+__pycache__
+*.py[cod]
+*.egg-info
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.ipynb_checkpoints
+dist
+build
+deploy/
+
+# Private, local and generated material must never enter the image context.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.credentials
+credentials/
+secrets/
+*.pdf
+private-sources/
+private_sources/
+.streamlit/secrets.toml
+*.secret
+*.secrets
+*.db
+*.sqlite
+*.sqlite3
+*.npy
+*.npz
+*.pkl
+# data/ holds raw downloads (data/elexon/) and a locally built demo run
+# (data/demo/); the image builds its own demo run.
+data/
+outputs/
+artifacts/
+reports/
+notebooks/
+tests/
+docs/sources/
+docs/plans/
+docs/reviews/
+HANDOVER.md
